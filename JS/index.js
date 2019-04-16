@@ -6,15 +6,15 @@ alert("Casse Brique");
 	var BRIQUE_WIDTH = 48;
 	var BRIQUE_HEIGHT = 15;
 	var ESPACE_BRIQUE = 2;
-	var BARRE_JEU_WIDTH = 80;
+	var BARRE_JEU_WIDTH = 120;
 	var BARRE_JEU_HEIGHT = 20;
-	var PXL_DEPLA = 16;
+	var PXL_DEPLA = 20;
 	var ZONE_JEU_WIDTH = 700;
 	var ZONE_JEU_HEIGHT = 500;
-	var COULEURS_BRIQUES = ["#503A22", "#88502F", "#A17048", "#D9C38A", "#F7DDAC"];
-	var COULEUR_BALLE = "#16A6DB";
+	var COULEURS_BRIQUES = ["#21252B", "#3B3F45", "#51555B", "#72767C", "#868A90", "#989CA2", "#A9ADB3"];
+	var COULEUR_BALLE = "red";
 	var DIMENSION_BALLE = 8;
-	var VITESSE_BALLE = 2;
+	var VITESSE_BALLE = 2.5;
 
 
 	// Variables
@@ -120,7 +120,7 @@ function refreshGame() {
   // Affichage de la balle
   context.fillStyle = COULEUR_BALLE;
   context.beginPath();
-    context.arc(balleX, balleY, DIMENSION_BALLE, 0, Math.PI*2, true);
+    context.arc(balleX, balleY, DIMENSION_BALLE, -1, Math.PI*2, true);
     context.closePath();
     context.fill();
 
@@ -141,11 +141,11 @@ function checkDepla(e) {
 
 function perdu() {
   clearInterval(boucleJeu);
-  alert("Perdu !");
+  alert("Perdu !")
 }
 function gagne() {
   clearInterval(boucleJeu);
-  alert("Bravo vous avez gagné !");
+  alert("Bravo tu a gagné !")
 }
 
 function clearContexte(ctx, startwidth, ctxwidth, startheight, ctxheight) {
