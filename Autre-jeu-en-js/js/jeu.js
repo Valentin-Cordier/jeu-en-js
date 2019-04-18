@@ -16,7 +16,7 @@ var numberOfRAYS = 20;
 var rayLength = 100;
 var maskGraphics;
 
-//taille du jeu
+//variable config
 var gameWidth = 700;
 var gameHeight = 540;
 
@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", Main, false); //appel de la foncti
 function Main()
 {
   //création zone de jeu -API Canvas
-  game = new Phaser.game(gameWidth, gameHeight, Phaser.AUTO, "idGameDiv", {preload:onPreload, create:onCreate, update:onUpdate});
+   new Phaser.game(gameWidth, gameHeight, Phaser.AUTO, "idGameDiv", {preload:onPreload, create:onCreate, update:onUpdate});
 
   console.log("Main");
 }
