@@ -4,17 +4,17 @@ alert("Casse Brique");
       	var NBR_LIGNES = 7;
        	var NBR_BRIQUES_PAR_LIGNE = 15;
       	var BRIQUE_WIDTH = 48;
-      	var BRIQUE_HEIGHT = 15;
+      	var BRIQUE_HEIGHT = 20;
       	var ESPACE_BRIQUE = 2;
       	var BARRE_JEU_WIDTH = 150;
       	var BARRE_JEU_HEIGHT = 20;
       	var PXL_DEPLA = 20;
-      	var ZONE_JEU_WIDTH = 700;
+      	var ZONE_JEU_WIDTH = 800;
       	var ZONE_JEU_HEIGHT = 500;
       	var COULEURS_BRIQUES = ["#21252B", "#3B3F45", "#51555B", "#72767C", "#868A90", "#989CA2", "#A9ADB3"];
       	var COULEUR_BALLE = "red";
       	var DIMENSION_BALLE = 8;
-      	var VITESSE_BALLE = 3;
+      	var VITESSE_BALLE = 2.5;
 
 
 	// Variables
@@ -24,8 +24,8 @@ alert("Casse Brique");
       	var context;
       	var balleX = 150;
       	var balleY = 300;
-      	var dirBalleX = 1;
-      	var dirBalleY = -1;
+      	var dirBalleX = 2;
+      	var dirBalleY = -2;
       	var boucleJeu;
       	var limiteBriques = (ESPACE_BRIQUE+BRIQUE_HEIGHT)*NBR_LIGNES;
       	var aGagne = 0;
@@ -53,7 +53,7 @@ alert("Casse Brique");
         creerBriques(context, NBR_LIGNES, NBR_BRIQUES_PAR_LIGNE, BRIQUE_WIDTH, BRIQUE_HEIGHT, ESPACE_BRIQUE);
 
   // Boucle de rafraichissement du contexte 2D
-        boucleJeu = setInterval(refreshGame, 10);
+        boucleJeu = setInterval(refreshGame, 8);
 
   // Gestion des évènements
         window.document.onkeydown = checkDepla;
