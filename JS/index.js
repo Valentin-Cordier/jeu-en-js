@@ -8,11 +8,11 @@ alert("Casse Brique");
       	var ESPACE_BRIQUE = 2;
       	var BARRE_JEU_WIDTH = 150;
       	var BARRE_JEU_HEIGHT = 20;
-      	var PXL_DEPLA = 20;
+      	var PXL_DEPLA = 35;
       	var ZONE_JEU_WIDTH = 800;
       	var ZONE_JEU_HEIGHT = 500;
       	var COULEURS_BRIQUES = ["#21252B", "#3B3F45", "#51555B", "#72767C", "#868A90", "#989CA2", "#A9ADB3"];
-      	var COULEUR_BALLE = "red";
+      	var COULEUR_BALLE = "white";
       	var DIMENSION_BALLE = 8;
       	var VITESSE_BALLE = 2.5;
 
@@ -53,7 +53,7 @@ alert("Casse Brique");
         creerBriques(context, NBR_LIGNES, NBR_BRIQUES_PAR_LIGNE, BRIQUE_WIDTH, BRIQUE_HEIGHT, ESPACE_BRIQUE);
 
   // Boucle de rafraichissement du contexte 2D
-        boucleJeu = setInterval(refreshGame, 8);
+        boucleJeu = setInterval(refreshGame, 9);
 
   // Gestion des évènements
         window.document.onkeydown = checkDepla;
@@ -84,19 +84,19 @@ function refreshGame() {
         if ( aGagne ) gagne();
 
   // Réaffichage de la barre
-        context.fillStyle = "#333333";
+        context.fillStyle = "white";
         context.fillRect(barreX,barreY,BARRE_JEU_WIDTH,BARRE_JEU_HEIGHT);
 
   // Calcul de la nouvelle position de la balle
 
-        if ( (balleX + dirBalleX * VITESSE_BALLE) >  ZONE_JEU_WIDTH) dirBalleX = -1;
-          else if ( (balleX + dirBalleX * VITESSE_BALLE) <  0) dirBalleX = 2;
+        if ( (balleX + dirBalleX * VITESSE_BALLE) >  ZONE_JEU_WIDTH) dirBalleX = -1.5;
+          else if ( (balleX + dirBalleX * VITESSE_BALLE) <  0) dirBalleX = 1.5;
         if ( (balleY + dirBalleY * VITESSE_BALLE) >  ZONE_JEU_HEIGHT) perdu();
           else {
-        if ( (balleY + dirBalleY * VITESSE_BALLE) <  0) dirBalleY = 2;
+        if ( (balleY + dirBalleY * VITESSE_BALLE) <  0) dirBalleY = 1.5;
           else {
         if ( ((balleY + dirBalleY * VITESSE_BALLE) > (ZONE_JEU_HEIGHT - BARRE_JEU_HEIGHT)) && ((balleX + dirBalleX * VITESSE_BALLE) >= barreX) && ((balleX + dirBalleX * VITESSE_BALLE) <= (barreX+BARRE_JEU_WIDTH))) {
-          dirBalleY = -1;
+          dirBalleY = -1.5;
           dirBalleX = 2*(balleX-(barreX+BARRE_JEU_WIDTH/2))/BARRE_JEU_WIDTH;
       }
     }
