@@ -6,7 +6,7 @@ alert("Casse Brique");
       	var BRIQUE_WIDTH = 48;
       	var BRIQUE_HEIGHT = 15;
       	var ESPACE_BRIQUE = 2;
-      	var BARRE_JEU_WIDTH = 120;
+      	var BARRE_JEU_WIDTH = 150;
       	var BARRE_JEU_HEIGHT = 20;
       	var PXL_DEPLA = 20;
       	var ZONE_JEU_WIDTH = 700;
@@ -22,8 +22,8 @@ alert("Casse Brique");
        	var barreX; // Position en X de la barre: Changement dynamique avec clavier / souris
       	var barreY; // Position en Y de la barre: Ne bougera pas.
       	var context;
-      	var balleX = 100;
-      	var balleY = 250;
+      	var balleX = 150;
+      	var balleY = 300;
       	var dirBalleX = 1;
       	var dirBalleY = -1;
       	var boucleJeu;
