@@ -97,7 +97,7 @@ function refreshGame() {
           else {
         if ( ((balleY + dirBalleY * VITESSE_BALLE) > (ZONE_JEU_HEIGHT - BARRE_JEU_HEIGHT)) && ((balleX + dirBalleX * VITESSE_BALLE) >= barreX) && ((balleX + dirBalleX * VITESSE_BALLE) <= (barreX+BARRE_JEU_WIDTH))) {
           dirBalleY = -1.5;
-          dirBalleX = 2*(balleX-(barreX+BARRE_JEU_WIDTH/2))/BARRE_JEU_WIDTH;
+          dirBalleX = 2*(balleX-(barreX+BARRE_JEU_WIDTH/1))/BARRE_JEU_WIDTH;
       }
     }
   }
@@ -120,7 +120,7 @@ function refreshGame() {
   // Affichage de la balle
         context.fillStyle = COULEUR_BALLE;
         context.beginPath();
-           context.arc(balleX, balleY, DIMENSION_BALLE, -1, Math.PI*2, true);
+           context.arc(balleX, balleY, DIMENSION_BALLE, -1.5, Math.PI*2, true);
            context.closePath();
            context.fill();
 
